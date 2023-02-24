@@ -5,5 +5,20 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html"
+  },
+  "background": {
+  "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+    "js": [
+      "content.js"
+   ],
+    "matches": [
+       // 対象とするウェブサイトの URL のパターンを記述する。この場合は https であればすべて対象となる。
+       "https://*/*"
+     ]
   }
+  ],
+  "permissions": ["tabs"]
 }
